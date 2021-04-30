@@ -18,11 +18,27 @@
  *
  */
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
+
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+// const infuraKey = "fj4jll3k.....";
+
+// prob would be better to use the above but I'm using dotenv instead
+require('dotenv').config()
+
+const web3 = require('web3');
+
+const mnemonic = process.env.ETH_WALLET_MNEMONIC;
+const ropsten_api_key = process.env.ROPSTEN_API_KEY;
+
+const liveNetwork = process.env.ETH_LIVE_NETWORK;
+const liveNetworkId = process.env.ETH_LIVE_NETWORK_ID;
+
+console.log("mnemonic: ", mnemonic)
+console.log("rospten api key with infura: ", ropsten_api_key)
 
 module.exports = {
   /**
@@ -57,6 +73,27 @@ module.exports = {
       // from: <address>,        // Account to send txs from (default: accounts[0])
       // websockets: true        // Enable EventEmitter interface for web3 (default: false)
     // },
+    ropsten: {
+      provider: () =>
+        new HDWalletProvider({
+          mnemonic,
+          providerOrUrl:
+            ROPSTEN_API_KEY,
+          chainId: 3,
+        }),
+      network_id: 3,
+      gas: 2000000      //make sure this gas allocation isn't over 4M, which is the max
+    },
+
+    // PUBLIC MAINNET
+    networks: {
+      live: {
+        provider: () => new HDWalletProvider(mnemonic, liveNetwork),
+        network_id: liveNetworkId,
+        gasPrice: web3.utils.toWei('64', 'gwei')
+      }
+    }
+    // END MAINNET
 
     // Useful for deploying to a public network.
     // NB: It's important to wrap the provider as a function.
