@@ -25,5 +25,5 @@ You just need to add the triangle coin addressas the token you wish to exchange 
 Here's some data on uniswap:
 https://info.uniswap.org/pair/0x04f9D513E3A22f4A0CEB89e209200D5C8b448d0D
 
-
+Feel free to send me some triangles -- seanroades.crypto !
 
