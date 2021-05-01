@@ -32,10 +32,12 @@ require('dotenv').config()
 const web3 = require('web3');
 
 const mnemonic = process.env.ETH_WALLET_MNEMONIC;
-const ropsten_api_key = process.env.ROPSTEN_API_KEY;
+const ropsten_api_key = process.env.ROSPTEN_API_KEY;
 
 const liveNetwork = process.env.ETH_LIVE_NETWORK;
 const liveNetworkId = process.env.ETH_LIVE_NETWORK_ID;
+
+const mainnet_api_key = process.env.MAINNET_API_KEY;
 
 console.log("mnemonic: ", mnemonic)
 console.log("rospten api key with infura: ", ropsten_api_key)
@@ -78,20 +80,27 @@ module.exports = {
         new HDWalletProvider({
           mnemonic,
           providerOrUrl:
-            ROPSTEN_API_KEY,
+            ropsten_api_key,
           chainId: 3,
         }),
       network_id: 3,
-      gas: 2000000      //make sure this gas allocation isn't over 4M, which is the max
+      gas: 4000000,
+      gasPrice: 42000000000      //make sure this gas allocation isn't over 4M, which is the max
     },
 
     // PUBLIC MAINNET
-    networks: {
-      live: {
-        provider: () => new HDWalletProvider(mnemonic, liveNetwork),
-        network_id: liveNetworkId,
-        gasPrice: web3.utils.toWei('64', 'gwei')
-      }
+    mainnet: {
+      provider: function() {
+        return new HDWalletProvider({
+          mnemonic,
+          providerOrUrl:
+            mainnet_api_key,
+          chainId: 1,
+        })
+      },
+      network_id: 1,
+      gas: 4000000,
+      gasPrice: 42000000000
     }
     // END MAINNET
 
