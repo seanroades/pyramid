@@ -12,8 +12,6 @@ Upon joining the network, they will recieve 5 triangles. The person who invited 
 
 Users can also trade triangles amongst themselves and buy them from others using ETH from the uniswap exchange.
 
-Currently the pyramid network is not servicable via an exchange but perhaps in the future, you will be able to exchange your triangles for USD or the other cryptocurrency of your choice.
-
 You can view the details here on etherscan
 https://etherscan.io/token/0xd26520d752f9766d3531589c08a0131cda6d0135
 
