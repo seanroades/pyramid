@@ -10,9 +10,7 @@ As a part of the network, you can invite friends to join by simply putting in th
 
 Upon joining the network, they will recieve 5 triangles. The person who invited them will also recieve 5 triangles and so on up to 16 levels. 
 
-Users can claim 2 triangles when they would like for free (minus the gas fee). 
-
-Users can also trade triangles amongst themselves.
+Users can also trade triangles amongst themselves and buy them from others using ETH from the uniswap exchange.
 
 Currently the pyramid network is not servicable via an exchange but perhaps in the future, you will be able to exchange your triangles for USD or the other cryptocurrency of your choice.
 
