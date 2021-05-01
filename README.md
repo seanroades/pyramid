@@ -18,9 +18,9 @@ https://etherscan.io/token/0xd26520d752f9766d3531589c08a0131cda6d0135
 You can also buy triangles on uniswap: 
 https://app.uniswap.org/#/swap
 
-You just need to add the triangle coin addressas the token you wish to exchange your ETH for, 0xd26520d752f9766d3531589c08a0131cda6d0135.
+You just need to add the triangle coin address for the field of the token you wish to exchange your ETH for on uniswap, 0xd26520d752f9766d3531589c08a0131cda6d0135.
 
-Here's some data on uniswap:
+Here's some data about the market of triangle coin on uniswap:
 https://info.uniswap.org/pair/0x04f9D513E3A22f4A0CEB89e209200D5C8b448d0D
 
 Feel free to send me some triangles -- seanroades.crypto !
